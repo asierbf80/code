@@ -1,0 +1,80 @@
+<style>
+  body {
+    background-color: #FFFFFF;
+  }
+
+  .green {
+    background-color: hsl(120,100%,50%);
+  }
+
+  .cyan {
+    background-color: ;
+  }
+
+  .blue {
+    background-color: ;
+  }
+  /* los colores tienen 3 características: tono, saturación y luminosidad. CSS3 introdujo la propidad hsl()
+  como alternativa de elegir un color indicando directamente estas carectísticas.
+  El tono es lo que se considera el color y empieza por el rojo a la izquierda, pasa por el verde en el medio y
+  el azul a la derecha. El tono utiliza un concepto de rueda de color, con valores entre 0 y 360.
+
+  La saturación es la cantidad de gris en un color. Un color saturado no tiene gris y un color mínimamente
+  saturado es casi completamente gris. Esto se da como un porcentaje: 100% = completamente saturado.
+
+  La claridad es la cantidad de negro o blanco en un color. Su porcentaje va de 0%(negro) a 100%(blanco).
+
+  El color en HTML no se limita a un tono plano. CSS proporciona la capacidad de utilizar transiciones de
+  color (degradados). Se accede mediante la funcion linear-gradient() en background.
+    · background: linear-gradient(gradient_direction, color1, color2, color3, ...);
+      - el primer argumento especifica la direccion desde la que comienza la transicion, indicar como un grado
+      (90deg) y hace un degradado horizontal de izquierda a derecha. Y (45deg) en diagonal de abajo izquierda a
+      arriba la derecha.
+        <style>
+          div{
+            border-radius: 20px;
+            width: 70%;
+            height: 400px;
+            margin: 50px auto;
+            background: linear-gradient(35deg,#CCFFFF,#FFCCCC);
+        }
+        </ style >
+        <div></ div >
+
+    La funcion repeating-linear-gradient() es similar a la anterior pero con la diferencia de que se
+    repite el patron de degradado especificado.
+    0px [yellow--blend--blue] 40px [green--blend--red] 80px
+    Para este ejemplo es útil pensar en las paradas de color como pares en los que cada color se mezcla.
+
+
+    Para el background se pueden utilizar patrones que se pueden establecer mediante la funcion URL:
+      · background: url(link);
+
+    Para cambiar la escala de un elemento, CSS tiene la propiedad transform, junto con la funcion scale().
+      · transform: scale(2); Eso aumenta el tamaño del elemento en 2 veces su tamaño original.
+    La propiedad transform tiene una variedad de funciones que le permiten escalar, mover, rotar, sesgar,etc..,
+    sus elementos. Cuando se usan pseudoclases como :hover la propiedad transform puede agregar interactividad
+    facilmente a sus elementos.
+
+    La funcion skewX() sesga el elemento a lo largo de su eje X(horiz) en un grado dado
+      · transform: skewX(24deg);
+    Con la función skewY() es igual pero a lo largo del eje Y(vert).
+
+
+    Los pseudo-elementos ::before y ::after se utilizan para agregar algo antes o
+    después de un elemento seleccionado. Para funcionar correctamente deben tener definida la propiedad
+    content. Se suele usar generalmente para agregar fotos o textos al elemento seleccionado.
+    Cuando los pseudo-elementos se utilizan para maquillaje, la propiedad es necesaria, pero se
+    establece en una cadena vacía.
+  */
+
+  div {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+  }
+</style>
+
+<div class="green"></div>
+<div class="cyan"></div>
+<div class="blue"></div>

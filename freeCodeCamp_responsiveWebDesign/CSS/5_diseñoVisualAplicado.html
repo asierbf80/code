@@ -1,0 +1,45 @@
+<style>
+  h2 {
+    position: relative;
+    top: 15px;
+    /* la posicion relative le permite especificar como CSS debe moverlo en relación con su
+    posición actual en el flujo normal de la página. Se empareja con las propiedades desplazamiento de CSS:
+      · left
+      · right
+      · top
+      · bottom
+      estos dicen que el numero de pixeles, porcentajes o ems para mover el elemento de distancia de donde
+      se coloca normalmente.
+      Cambiar la posicion a relativa no lo elimina del flujo normal, otros elementos a su alrededor aún se
+      comportan como si ese elemento estuviera en su posición predeterminada.
+
+      La posicion absolute, bloquea el elemento en su lugar en relacion a su contenedor principal.
+      Los elementos circundantes lo ignoran y las propiedades de desplazamiento se usan para su ajustar
+      su posicion.
+
+      La posicion fixed, bloquea un elemento en relacion con la ventana del navegador. Similar a
+      absolute, se usa con propiedades de desplazamiento de CSS y tambien el flujo del documento.
+      Otros elementos ya no "se dan cuenta" de donde están colocados por lo que puede implicar ajustes de
+      diseño en otro sitio. La diferencia entre fixed y absolute es que el elemento con posicion fija,
+      no se moverá cuando el usuario se desplace.
+
+      La propiedad float de un elemento, elimina el flujo normal de un documento y empuja a la derecha o la
+      derecha de su elemento padre que contiene. Se suele usar con la propiedad width para especificar cuanto
+      espacio horizontal requiere. float: left o right; los elementos section y aside son para:
+      section (contenido) y aside (barra lateral).
+
+      Cuando los elementos se colocan para superponerse, el elemento más adelante, viene por defecto en HTML
+      en la parte superior de los otros elementos. Sin embargo, la propiedad z-index permite especificar el
+      orden en que se apilan esos elementos uno encima del otro. Es necesario un numero entero no decimal,
+      y el valor más alto mueve la pila más arriba en la pila con los valores más bajos.
+
+      Para centrar un elemento horizontalmente, se utiliza el método margin. Éste método también vale con
+      imagenes. Las imagenes son elementos en línea de forma predeterminada, pero se pueden cambiar para
+      bloquear elementos cuando establece la propiedad display en block. */
+  }
+</style>
+<body>
+  <h1>On Being Well-Positioned</h1>
+  <h2>Move me!</h2>
+  <p>I still think the h2 is where it normally sits.</p>
+</body>

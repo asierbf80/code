@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<!-- esto importa de Google Fonts la fuente Lobster -->
+<!-- h2 style="color:red;" CatPhotoApp /h2 -->
+<!-- las clases son estilos que se pueden reutilizar en otros elementos -->
+<!-- el atributo id diseña un solo elemento o para Javascript-->
+<style>
+  h2{
+    color: blue; /* esto deja en azul a las etiquetas h2 */
+    font-family: Lobster;/* esto hace que la fuente de h2 sea Lobster */
+  }
+  .red-text{
+    color: red; /* esto deja en rojo a todo lo que tenga como clase "red-text" */
+  }
+  p{
+    font-size: 16px; /* esto pone el tamaño de las etiquetas p en 16pixeles */
+    font-family: monospace; /* esto hace que la fuente de las etiquetas p sea monospace */
+  }
+  .smaller-image{
+    width: 100px; /* Width controla el ancho de un elemento */
+    border-radius: 10px ; /* Modifica el radio del borde (Tambien se puede en %) */
+  }
+  .thick-green-border{
+    border-width: 10px; /* Modifica la anchura del borde */
+    border-color: green; /* Modifica el color del borde */
+    border-style: solid; /* Modifica el estilo del borde */
+
+  }
+  .silver-background{
+    background-color: silver; /* Modifica el color del fondo de un elemento */
+  }
+  #cat-photo-form{
+    background-color: green; 
+  }
+</style>
+
+<h2 class="red-text">CatPhotoApp</h2>
+<main>
+  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back." class="smaller-image thick-green-border"></a>
+
+  <div class="silver-background">
+    <p>Things cats love:</p>
+    <ul>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
+    </ul>
+    <p>Top 3 things cats hate:</p>
+    <ol>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
+    </ol>
+  </div>
+
+  <form id="cat-photo-form" action="https://freecatphotoapp.com/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+</html>

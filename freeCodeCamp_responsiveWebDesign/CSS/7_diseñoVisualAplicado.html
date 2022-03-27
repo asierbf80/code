@@ -1,0 +1,49 @@
+<style>
+  .heart {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: pink;
+    height: 50px;
+    width: 50px;
+    transform: rotate(-45deg);
+  }
+  .heart::after {
+    background-color: pink;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 25px;
+  }
+  .heart::before {
+    content: " " ;
+    background-color: pink;
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 0px;
+    /*
+    Para cambiar la escala de un elemento, CSS tiene la propiedad transform, junto con la funcion scale().
+      · transform: scale(2); Eso aumenta el tamaño del elemento en 2 veces su tamaño original.
+    La propiedad transform tiene una variedad de funciones que le permiten escalar, mover, rotar, sesgar,etc..,
+    sus elementos. Cuando se usan pseudoclases como :hover la propiedad transform puede agregar interactividad
+    facilmente a sus elementos.
+    */
+
+    /* Los pseudo-elementos ::before y ::after se utilizan para agregar algo antes o
+    después de un elemento seleccionado. Para funcionar correctamente deben tener definida la propiedad
+    content. Se suele usar generalmente para agregar fotos o textos al elemento seleccionado.
+    Cuando los pseudo-elementos se utilizan para maquillaje, la propiedad es necesaria, pero se
+    establece en una cadena vacía. 
+    */
+  }
+</style>
+<div class="heart"></div>

@@ -1,0 +1,69 @@
+<style>
+  h4 {
+    text-align: center; /* esto centra el texto*/
+    padding: 10px;
+    background-color:;/* el rgba es red,green,blue y la a tiene que ver con la
+    opacidad y tiene valores de 0(transparente) a 1(opaco) */
+    font-size: 27px; /* esto aumenta el tamaño de h4 a 27px */
+    /*font-weight:; modifica el grosor de la letra*/
+    text-transform: uppercase; /* cambia la aparencia del texto. es una forma de asegurarse que el texto aparece
+    de forma coherente sin cambiar el contenido en HTML
+      + valor:            resultado:
+              lowercase             transfórmame
+              uppercase             TRANSFORMAME
+              capitalize            Transfórmame
+              initial               usa el valor predeterminado
+              inherit               usa el valor text-transform del elemento padre
+              none                  predeterminado (usa el texto original)
+    */
+  }
+  p {
+    text-align: justify; /* esto justifica el texto, es decir, inicio y final de las lineas igual en todo*/
+    line-height: 25px; /* espacio de interlineado */
+  }
+  .links {
+    margin-right: 20px;
+
+  }
+  #thumbnail{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    /*
+      box-shadow:; es una propiedad que aplica una o mas sombras a un elemento.
+      la propiedad box-shadow toma valores para:
+        · offset-x: que tan lejos empujar la sombra horizontalmente
+        · offset-y: que tan lejos empujar la sombra verticalmente
+        · blur-radius, spread-radius y color en ese orden
+          + los valores blur-radius y spread-radius son opcionales +
+      se pueden realizar diferentes sombras separando las propiedades por comas
+    */
+    /* thumbnail significa miniatura en ingles por lo tanto el identificador se refiere a la miniatura*/
+  }
+  .fullCard {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 5px;
+    padding: 4px;
+  }
+  .cardContent {
+    padding: 10px;
+  }
+  a:hover{
+    color: #00F; /* el selector :hover sirve para cuando se desplaza el ratón por encima del elemento,
+    en este caso, cambia el color a azul */
+  }
+</style>
+<div class="fullCard" id="thumbnail">
+  <div class="cardContent">
+    <div class="cardText">
+      <h4><s>Google</s> Alphabet</h4>
+      <hr><!-- Esto crea una linea horizontal en la página -->
+      <p><em>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u>
+      at <strong>Stanford University</strong>.</em></p>
+    <!-- <u> subraya el texto, <strong> lo pone en negrita, <em> en cursiva y <s> lo tacha -->
+    </div>
+    <div class="cardLinks">
+      <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">Larry Page</a>
+      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">Sergey Brin</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<!-- Las media Query o consulta de medios, son una nueva técnica que cambia la presentación del contenido
+en función de los diferentes tamaños de ventana gráfica. La ventana gráfica es el área visible que tiene un
+usuario de una página web y es diferente según el dispositivo utilizado para acceder al sitio.
+Ejemplo de una consulta de medios que devuelve el contenido cuando el ancho del dispositivo es menor o igual
+a 100px:
+    · @media(max-width: 100px){/* CSS Rules */}
+La siguiente consulta devuelve el contenido cuando la altura del dispositivo es mayor o igual a 350px:
+    · @media(min-height: 350px){/* CSS Rules */}
+El CSS de dentro solo se aplica si el tipo de medio coincide con el del dispositivo.
+
+Hacer que las imagenes respondan con CSS es simplemente. Simplemente se le ha de agregar estas propiedades:
+    · img{
+        max-width: 100%; /* Esto asegura que la imagen nunca será más ancha que el contenedor en el que está */
+        height: auto; /* Esto hace que la imagen mantenga su relación de aspecto original */
+  }
+
+En lugar de usar em o px, se pueden usar unidades de ventana gráfica para una tipografía receptiva para cambiar
+el tamaño del texto. Las unidades de ventan gráfica, como los porcentajes, son unidades relativas, pero se basan
+en elementos diferentes. Las unidades de ventana relativa, son relativas a las dimensiones de ancho/alto del
+dispositivo con el que se utiliza y los porcentajes son relativos al tamaño del elemento contenedor principal.
+Las cuatro unidades de ventana gráfica diferentes son:
+  - vw(ancho de ventana gráfica): 10vw sería el 10% del ancho de la ventana gráfica.
+  - vh(altura de ventana gráfica): 3vh sería el 3% de la altura de la ventana gráfica.
+  - vmin(ventana gráfica mínima): 70vmin sería el 70% de la dimensión más pequeña de la ventana gráfica (alto/ancho).
+  - vmax(ventana gráfica máxima): 100vmax sería el 100% de la dimensión más grande de la ventana gráfica (alto/ancho).
+
+A continuación, se muestra un ejemplo que se establece una body etiqueta en el 30% del ancho de la ventana gráfica.
+  body{ width: 30vw; }
+-->

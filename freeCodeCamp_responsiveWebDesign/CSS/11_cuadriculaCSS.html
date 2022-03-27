@@ -1,0 +1,118 @@
+<!-- Se puede convertir cualquier elemento HTML en un contenedor de cuadricula estableciendo su display
+en grid. Esto le da la posibilidad de utilizar todas las demás propiedades asociadas con CSS Grid. En CSS grid
+el elemento principal se denomina contenedor y sus elementos secundarios se denominan elementos.
+Sólo con la creación de un elemento cuadrícula no basta, también se debe de definir la estructura de la cuadrícula.
+Para agregar algunas columnas a la cuadrícula, se usa la propiedad (grid-template-columns). Tal que:
+    - .container{
+            display: grid;
+            grid-template-columns: 50px 50px;
+        }
+    Esto le dará a la cuadricula dos columnas de 50px de ancho cada una. El número de parámetros dados a la
+  propiedad (grid-template-columns) indica el número de columnas en la cuadrícula y el valor de cada parámetro
+  indica el ancho de cada columna.
+Para ajustar las filas manualmente, se usa la propiedad (grid-template-rows) de la misma manera que la propiedad
+anterior. Sin embargo, se ajusta la altura de filas.
+Se pueden utilizar las unidades de px y em o también:
+  · fr: establece la columna o fila en una fracción del espacio disponible.
+  · auto: establece la columna o fila en el ancho o alto de su contenido automáticamente.
+  · %: ajusta la columna o fila al porcentaje de ancho de su contenedor.
+Ejemplo:
+    - grid-template-columns: auto 50px 10% 2fr 1fr;
+  Esto crea 5 columnas. La primera tan ancha como su contenido, la segunda columna es de 50px, la tercera es de
+  un 10% de su contenedor, y las dos últimas, el espacio restante se divide en tres secciones, dos para la cuarta
+  columna y una para la quinta.
+
+Las cuadriculas, se apretan entre sí, para agregar un espacio entre ella, se usa la propiedad(grid-column-gap):
+    grid-column-gap: 10px;
+      Esto crea 10px de espacio entre todas las columnas.
+Es igual para las lineas. (grid-row-gap)
+grid-gap es una propiedad abreviada para ambas. Si tiene un valor, creará un espacio entre filas y columnas, por el
+contrario, si hay dos valores, el primero será para las filas y el segundo para las columnas.
+
+Hasta ahora, todas las propiedades son para contenedores de cuadrícula, sin embargo, la propiedad
+(grid-column) es para elementos de la cuadrícula. Las línas horizontales y verticales que crean la cuadrícula se
+denominan líneas. Estas líneas se numeran comenzando con 1 en la esquina superior izquierda de la cuadrícula y se
+mueven hacia la derecha para las columnas y hacia abajo para las filas (sumando).
+   3 x 3
+  1-2-3-4
+  · · · ·
+  · · · ·
+  4 · · ·
+Para controlar el número de columnas que consumirá un artículo, se usa la propiedad (grid-columns) junto con los números de
+línea en los que se desea que el artículo comience y termine. Ejemplo:
+    - grid-column: 1 / 3; Esto hará que el elemento comience en la primera línea vertical de la izquierda y acabe en la 3a. Consumiendo 2 columnas.
+Ocurre lo mismo que con las filas con (grid-row).
+
+En CSS Grid, el contenido de cada elemento se encuentra en un cuadro denominado celda. Puede alinear la posición del contenido dentro de su celda
+horizontalente con la propiedad justify-self. Por defecto, tiene un valor stretch, que hará que el contenido llene todo el ancho de la celda. Esta
+propiedad tambien acepta:
+  start: alinea el contenido a la izquierda de la celda
+  center: alinea el contenido al centro
+  end: lo alinea a la derecha de la celda
+Para alinearlo verticalmente se usa (align-self) y se usan los mismos valores que (justify-self)
+
+</section>
+-->
+<!--
+  Se pueden agrupar las celdas de la cuadricula en una area y darle al area un nombre personalizado, utilizando  grid-template-areas en el contenedor
+  tal que:
+            grid-template-areas:
+              "header header header"
+              "advert content content"
+              "advert footer footer"
+
+  El codigo agrupa las celdas de la cuadricula en 4 areas (header, advert, content y footer) y cada palabra representa una celda y cada par de comillas
+  represa una fila.
+
+
+  Despues de crear una plantilla de area para el grid, puedes ubicar un elemento en tu area referenciando el nombre que le das antes. Para ello, se
+  usa la propiedad grid-area sobre un elemento tal que:
+          .item1{
+            grid-area: header;
+        }
+      Esto indica a la cuadricula que la clase item1 se ubique en el area llamada header.
+
+
+  La propiedad grid-area se puede utilizar de otra manera. Si la cuadricula (grid) no tiene plantillas de referencia, se puede crear una para un elementos
+  sobre la marcha para ubicarlos tal que:
+        item{grid-area: 1/1/2/4; }
+    Esto define el area del elemento, representando estos valores:
+          grid-area: horizontal line to start at / vertical line to start at / horizontal line to end at / vertical line to end at;
+    Así que en el ejemplo sería tal que: filas ocupadas en las líneas 1 y 2, y las columnas entre la 1 y la 4.
+
+
+  Para definir una cuadricula (grid) puedes utilizar la funcion repeat para especificar el numero de veces que una columna o fila se ha de repetir, seguido
+  de una coma y el valor que se ha de repetir.
+
+  Ej:
+      Cuadrícula de 100 filas, cada fila con 50px de alto:
+                  grid-template-rows: repeat(100, 50px);
+
+  También se pueden repetir múltiples valores con la función repeat e insertar la función entre otros valores al definir una estructura de cuadrícula.
+  Ej:
+    grid-template-columns: repeat(2, 1fr, 50px) 20px;
+
+      Esto se traduce a:
+    grid-template-columns: 1fr 50px 1fr 50px 20px;
+
+
+  Hay otra función integrada con grid-template-"columns/rows" llamada minmax. Se usa para limitar el tamaño de los elementos cuando el grid cambia de
+  tamaño. Para esto, necesitas especificar el rango de tamaño aceptable para tu elemento.
+  Ej:
+      grid-template-columns: 100px minmax(50px, 200px);
+
+  Esto configura la creación de dos columnas, la primera de 100px y la segunda tiene un ancho mínimo de 50px y un máximo de 200px;
+
+
+  La funcion de repeticion viene con una opcion llamada auto-fill. Esto te permite insertar automaticamente tantas filas o columnas
+  del tamaño deseado como sea posible, dependiendo del tamaño del contenedor. Puedes crear diseños flexibles combinando auto-fill con minmax, tal que:
+  Ej:
+        repeat(auto-fill, minmax(60px, 1fr));
+
+  Cuando el tamaño del contenedor cambia, esta configuracion sigue insertando columnas de 60px, y estirandolas hasta que pueda insertar otra.
+  Si no le caben en una fila, las moverá hacia abajo en una nueva fila.
+
+  auto-fit funciona igual que auto-fill. La única diferencia es que cuando el tamaño del contenedor excede el tamaño de todos los elementos
+  combinados, auto-fill sigue insertando filas o columnas vacías y empuja los elementos hacia un lado, mientras que auto-fit colapsa
+  esas fias o columnas y estira los elementos para que cubran el tamaño del contenedor. 
+ -->

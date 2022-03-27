@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://www.bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <!-- La etiqueta del formulario se cierra automáticamente, el placeholder
+es el texto que se ve antes de que el formulario sea seleccionado.
+Se pueden crear formularios web que envien información a un servidor mediante html.
+Se puede realizar utilizando un atributo "action" en el formulario.
+Para enviar la información al servidor, creamos un botón de envío (submit).
+Podemos hacer que sea obligatorio rellenando el formulario mediante el elemento 'required' en el input.
+Se pueden usar botones de opcion para que el usuario de una respuesta de entre varias.-->
+
+<!-- <form action ="/url-where-you-want-to-submit-form-data">
+
+  <input type="text" placeholder="cat photo URL">
+  <button type="submit">Submit</button>
+  </form> -->
+
+  <!-- el checkbox funciona para enviar respuesta de varias propuestas y no solo una como radio
+
+  <label><input type="checkbox" name="personality"> Indoor</label>
+      <label><input type="checkbox" name="personality"> Outdoor</label>
+      <label><input type="checkbox" name="personality">Personality</label>
+
+-->
+
+<!-- utilizamos un atributo value para que a la hora de enviar la información del formulario
+nos sea más fácil indicarla desde donde ha sido enviada-->
+<!-- el atributo 'checked' se utiliza para que se marque la casilla de forma predeterminada-->
+<form action="https://www.freecatphotoapp.com/submit-cat-photo">
+  <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
+  <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label><br>
+  <label for="loving"><input id="loving" type="checkbox" name="personality" value="loving" checked> Loving</label>
+  <label for="lazy"><input id="lazy" type="checkbox" name="personality" value="lazy"> Lazy</label>
+  <label for="energetic"><input id="energetic" type="checkbox" name="personality" value="energetic"> Energetic</label><br>
+  <input type="text" placeholder="cat photo URL" required>
+  <button type="submit">Submit</button>
+</form>
+
+</main>
+</html>

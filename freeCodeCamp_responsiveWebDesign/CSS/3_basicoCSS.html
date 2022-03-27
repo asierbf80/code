@@ -1,0 +1,33 @@
+<style>
+  /* en css podemos crear una variable como (--penguin-skin: 'color';) y luego asignarle el valor de
+  la variable a otros elementos mediante el nombre que se le ha dado [ background: var(--penguin-skin, colorAlternativo); ] */
+  :root{
+    /* es una pseudo-clase selector que coincide con el elemento raíz del documento,
+    por lo general el elemento html. Al crear sus variables en :root, estaran disponibles
+    globalmente y se puede acceder a ellas desde cualquier otro selector en la hoja de estilo */
+  }
+  body {
+    background-color: #000000; /* (negro) */ /* en hexadecimal se dividen dos numeros para cada valor RGB
+    Red(R), Green(G), Blue(B). Tambien se puede escribir mediante un numero en cada valor, sin embargo,
+    eso reduce los colores posibles */
+    /* tambien se puede poner como rgb(0,0,0) con valores entre 0 y 255 */
+
+    color: green;
+    font-family: monospace;
+        /* Esto edita los elementos dentro del body */
+  }
+  .pink-text{
+    color: pink !important;
+    /* Cuando entre una clase y el body se define algo diferente, se sobrepone lo que pone la clase */
+    /* la opcion más importante para prevalecer el CSS es mediante (!important) */
+  }
+  .blue-text{
+    color: blue; /* entre dos clases declaradas, aunque html no prevalece ninguna,
+    en css prevalece la que se ha declarado en último lugar */
+  }
+  #orange-text{
+    color: orange; /* entre una clase y un id, en css prevalece el id */
+  }
+</style>
+<h1 class="pink-text blue-text" id="orange-text" style="color: white;">Hello World</h1>
+<!-- a la hora de editar, el estilo dentro de la etiqueta, prevalece ante el estilo fuera de ella -->

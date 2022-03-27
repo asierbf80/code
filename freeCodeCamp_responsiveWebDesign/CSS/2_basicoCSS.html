@@ -1,0 +1,62 @@
+<!-- Todos los elementos html son en esencia, pequeños rectangulos.
+Las propiedades que contolan el espacio son "padding", "border" y "margin" -->
+<style>
+  .injected-text {
+    margin-bottom: -25px;
+    text-align: center;
+  }
+
+  .box {
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    text-align: center;
+  }
+
+  .yellow-box {
+    background-color: yellow;
+    padding: 10px;
+  }
+
+  .red-box {
+    background-color: crimson;
+    color: #fff;
+    padding: 20px; /* El elemento padding controla la cantidad de espacio entre
+    el contenido del elemento y su borde */
+    /*
+    padding-top:;
+    padding-right:;
+    padding-bottom:;
+    padding-left:;
+    las unidades relativas em o rem son relativas a otro valor de longitud. em por ejemplo
+    se basa en el tamaño de la fuente de un elemento.
+    las unidades absolutas como in son pulgadas o como mm son milimetros. las unidades absolutas
+    se aproximan a la medida real en una pantalla, pero depende de la resolucion de la pantalla
+    */
+    margin: 20px;
+  }
+
+  .blue-box {
+    background-color: blue;
+    color: #fff;
+    padding: 40px 20px 20px 40px;
+    margin: 20px; /* El elemento marging controla la cantidad de espacio entre el border y los elementos circundantes,
+     si es negativo el elemento crecerá más */
+     /*
+     margin-top:;
+     margin-right:;
+     margin-bottom:;
+     margin-left:;
+     */
+  }
+  [type= 'checkbox']{
+    margin: 10px 0px 15px 0px; /* esto selecciona los elementos con atributo type
+    y de valor de casillas de verificación y dan un margen superior de 10px e inferior de 15px */
+  }
+</style>
+<h5 class="injected-text">margin</h5>
+
+<div class="box yellow-box">
+  <h5 class="box red-box">padding</h5>
+  <h5 class="box blue-box">padding</h5>
+</div>

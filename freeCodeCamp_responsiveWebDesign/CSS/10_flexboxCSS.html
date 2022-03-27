@@ -1,0 +1,50 @@
+<!-- Colocar la propiedad CSS display: flex; en un elemento le permite usar otras propiedades
+flexibles para construir una página receptiva. Al agregar el display: flex a un elemento lo convierte
+en un contenedor flexible. Esto hace posible alinear cualquier hijo de ese elemento en filas o columnas.
+Se puede hacer esto agregando la flex-direction propiedad al elemento principal y configurándolo en fila o
+columna. La creacion de una fila alineará a los niños horizontalmente y la creacion de una columna alineará
+a los niños verticalmente.
+Otras opciones son row-reverse y column-reverse. El valor predeterminado de flex-direction es row.
+EL header y footer en el ejemplo de inserción de tweet tienen elementos secundarios que podrían organizarse
+como filas usando flex-direction. Esto le dice a CSS que alinee a los niños horizontalmente o verticalmente.
+Los elementos flexibles dentro de un contenedor flexible no llenan todo el espacio del contenedor. Es común
+decirle a CSS como alinear y espaciar los elementos flexibles.
+Hay varias opciones sobre como espaciar los elementos flexibles a lo largo de la línea que es el eje
+principal. Uno de los más utilizados es el justify-content: center; que alinea todos los elementos flexibles
+con el centro dentro del contenedor flexible. Otras opciones son:
+  · flex-start: alinea los elementos al inicio del contenedor flexible. Para una fila, esto empuja los artículos
+  a la izquierda del contenedor. Para una columna, a la parte superior del contenedor. Es la predeterminada si
+  no se justifica el "justify-content".
+  · flex-end: alinea los elementos al final del contenedor flexible. Para una fila, esto empuja los elementos de
+  la derecha al contenedor. Para una columna, al fondo del contenedor.
+  · space-between: alinea los elementos con el centro del eje principal, con espacio adicional entre los elementos.
+  Los primeros y los ultimos se empujan hasta el borde del contenedor flexible. Por ejemplo, en una fila, el primer artículo
+  está contra el lado izquierdo del contenedor, el último artículo está contra el lado derecho del contenedor,
+  luego el espacio restante se distribuye uniformemente entre los otros artículos
+  · space-around: similar a la anterior pero el primer y último artículo no están bloqueados en los bordes del contenedor,
+  el espacio se distribuye alrededor de todos los árticulos con medio espacio en cada extremo del contenedor flexible.
+  · space-evenly: distribuye el espacio de manera uniforme entre los elementos flexibles con un espacio completo en cada
+  extremo del contenedor flexible.
+ -->
+<style>
+  #box-container {
+    height: 500px;
+    display: flex;
+  }
+
+  #box-1 {
+    background-color: dodgerblue;
+    width: 50%;
+    height: 50%;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    width: 50%;
+    height: 50%;
+  }
+</style>
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>

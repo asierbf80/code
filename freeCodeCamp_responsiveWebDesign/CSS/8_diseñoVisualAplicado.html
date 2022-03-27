@@ -1,0 +1,58 @@
+<style>
+  /* Para animar un elemento, existen las propiedades de animacion y la regla @keyframes.
+  Las propiedades de animación controlan como debe de comportarse ésta, y la regla controla lo que sucede
+  durante esa animación. Hay 8 propiedades de animacion en total.
+      · animation-name establece el nombre de la animacion que luego usa @keyframes para decirle a CSS
+      que reglas van con que animaciones.
+      · animation-duration establece la duración de la animación.
+      · animation-fill-mode especifica el estilo aplicado cuando la animacion a terminado forwards(mantener).
+      · animation-iteration-count permite contar las veces que gustaría recorrer la animación, si se
+      configura como infinite no para en ningun momento.
+      · animation-timing-function dice como acelera y desacelera el elemento en el transcurso.
+          - ease: comienza lento y acelera en el medio, disminuye al final
+          - ease-out: rapido al principio y luego se realentiza
+          - ease-in: lento y luego se acelera
+          - linear: velocidad constante
+          - cubic-bezier(x1,y1,x2,y2) la forma de la curva representa la animacion. X = duracion e Y = cambio
+
+        ejemplo:
+            #anim{
+              animation-name: colorful;
+              animation-duration: 3s;
+          }
+
+          @keyframes colorful{
+            0%{
+              background-color: blue;
+          }
+            100%{
+              background-color: yellow;
+          }
+        }
+
+   */
+  div {
+    height: 40px;
+    width: 70%;
+    background: black;
+    margin: 50px auto;
+    border-radius: 5px;
+  }
+
+  #rect {
+    animation-name: animacion;
+    animation-duration: 3s;
+  }
+  @keyframes animacion {
+    0%{
+      background-color: blue;
+    }
+    100%{
+      background-color: yellow;
+    }
+  }
+
+
+
+</style>
+<div id="rect"></div>

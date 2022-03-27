@@ -1,0 +1,87 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  transition: .5s;
+}
+body{
+  background-color: rgba(245 ,245 ,220, 0.7);
+}
+.contenedor{
+  width:100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(180,100,0);
+}
+
+.carta{
+  max-width: 100px;
+  margin: 20px;
+}
+.carta .arriba{
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.5);
+  /*background-color: rgba(20,20,70,0.67);*/
+  transform: translateY(0px);
+  position: relative;
+  z-index: 1;
+}
+.carta:hover .arriba{
+  transform: translateY(0px);
+}
+.carta .abajo{
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  transform: translateY(-100px);
+}
+.carta:hover .abajo{
+  transform: translateY(0px);
+}
+/*
+.carta .Blanca{
+  background-color: #FFFFFF;
+}
+.carta .Azul{
+  background-color: hsl(200, 50%, 50%);
+}
+.carta .Rojo{
+  background-color: hsl(360, 50%, 50%);
+}
+.carta{
+  height: 100px;
+  width: 100px;
+  positive: relative;
+  top: 100px;
+}
+.blackDos{
+  blackground-color: rgba(255,255,255, 0.5);
+
+}
+.blackDos{
+  position: relative;
+
+}
+.whiteDos{
+
+}
+.blueDos{
+
+}
+.redDos{
+
+}
+*/
