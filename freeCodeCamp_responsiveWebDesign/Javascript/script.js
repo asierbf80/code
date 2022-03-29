@@ -289,3 +289,14 @@ Si tienes datos tabulares, puedes utilizar un objeto para hacer una búsqueda de
 lugar de una declaración switch o una encadenación de if/elses. Esto es de utilidad cuando
 se sabe que los datos de entrada están limitados a un cierto rango.
 */
+
+/* A veces es útil comprobar si existe una propiedad o no y para ello existe el método
+.hasOwnProperty(propname) para determinar si un objeto tiene la propiedad con ese nombre o no.
+Devuelve un booleano si encuentra o no la propiedad. */
+const myObj = {
+  top: "hat",
+  bottom: "pants"
+};
+
+myObj.hasOwnProperty("top"); // true
+myObj.hasOwnProperty("middle"); // false
