@@ -1,0 +1,111 @@
+A pesar de que estamos haciendo un curso de git y github, no es un lenguaje de programación
+como tal, si no que es un sistema de control de versiones y por lo tanto, da igual en el lenguaje
+qué trabajes. Por lo que, el código que se escribirá, son instrucciones en git.
+La gran mayoría del lenguaje en git se escribe en la terminal.
+Específicamente, git te instala una especie de terminal, un bush, que es como una consola pero con
+mejores funcionalidades.
+
+En git hay 3 estados. Uno es el (working directory) qué es dónde tú trabajas con todos tus archivos.
+Luego hay un área (staging area) que es dónde preparas todos los archivos para el guardado. Y cuando
+finalmente estás decidido a guardar todo, lo pasas a un repositorio que ese sería el tercer estado.
+
+Comandos básicos (Basic commands):
+  · git init (Le decimos a git o al SO que vamos a empezar a usar git (inicializar))
+  · git add <file> (Para pasar los archivos del working directory al staging area)
+  · git status (Para ver en cuál de los 3 estados está mi archivo)
+  · git commit (Para pasar lo del stagging area al repositorio)
+  · git push (Para pasar el código a un repositorio remoto)
+  · git pull (Trae los cambios que han hecho los demás desarrolladores)
+  · git clone (Hace una copia desde el servidor central, dónde está el código a tu ordenador)
+
+Antes de empezar con cualquier comando, lo primero que se ha de hacer es inicializar el repositorio
+del código. Para ello, abrimos primeramente un terminal. Navegamos hasta el directorio dónde tenemos
+el archivo o archivos. Una vez dentro de la carpeta con los archivos, inicializamos (git init).
+# git init
+# ayuda: Usando 'master' como el nombre de la rama inicial. Este nombre de rama predeterminado
+# ayuda: está sujeto a cambios. Para configurar el nombre de la rama inicial para usar en todos
+# ayuda: de sus nuevos repositorios, reprimiendo esta advertencia, llama a:
+# ayuda:
+# ayuda: 	git config --global init.defaultBranch <nombre>
+# ayuda:
+# ayuda: Los nombres comúnmente elegidos en lugar de 'master' son 'main', 'trunk' y
+# ayuda: 'development'. Se puede cambiar el nombre de la rama recién creada mediante este comando:
+# ayuda:
+# ayuda: 	git branch -m <nombre>
+
+Ejecutamos el comando que nos permite ver los archivos que tenemos (git status).
+# git status
+# En la rama master
+# No hay commits todavía
+#
+# Archivos sin seguimiento:
+#  (usa "git add <archivo>..." para incluirlo a lo que se será confirmado)
+#  app.js
+#  index.html
+#
+# no hay nada agregado al commit pero hay archivos sin seguimiento presentes (usa "git add" para hacerles seguimiento)
+
+Para agregarlo a mi área de trabajo [staging area] utilizamos el comando (git add <>).
+# git add app.js
+# git status
+# En la rama master
+# No hay commits todavía
+#
+# Cambios a ser confirmados:
+#   (usa "git rm --cached <archivo>..." para sacar del área de stage)
+# 	nuevos archivos: app.js
+#
+# Archivos sin seguimiento:
+#   (usa "git add <archivo>..." para incluirlo a lo que se será confirmado)
+# 	index.html
+
+Agregamos tambíen el archivo que nos falta de la misma manera que la anterior.
+Si creamos un nuevo archivo de la misma manera que hemos creado los anteriores, git indacará que no es seguido por lo que
+hemos de realizar el mismo progreso.
+
+Para hacer una snapshot usamos el comando (git commit) no obstante cuando trabajamos con git, necesitamos decirle que
+desarrollador realiza los cambios. Por lo que primeramente hay que configurarlo.
+
+Una vez configurado, cambia la consola y entra en un editor de código de la terminal. Para introducir texto (entrar
+en el modo INSERTAR se ha de teclear la letra i).
+Tecleamos el mensaje del commit y le damos a (ESC). Una vez fuera, tecleamos (:wq)[w "write", q "quit"].
+Esto nos indica que 2 archivos han sido cambiados y ha empezado a crear una especie de hash o de ID para cada archivo.
+
+Para ver todos los commits que hemos creado, usamos el comando (git log).
+
+Para revertir los cambios que realizamos un archivo, usamos el comando (git checkout -- <archivo>)
+
+Para ver las diferencias realizadas en el archivo modificado, usamos el comando (git diff <archivo>).
+
+Para agregar los nuevos cambios utilizamos el comando (git add <archivo>).
+Pero si queremos guardar los cambios, usamos el comando (git commit)
+
+Podemos crear un archivo (.gitignore) que haga que ignore los archivos que nosotros indicamos dentro.
+
+A la hora de hacer un commit, podemos escribir (git commit -m "Mensaje") para no tener que abrir de nuevo el editor
+y escribir directamente el mensaje.
+
+Normalmente comenzamos en la rama (master), es la que nos indica .git por defecto. Para verlo, usamos el comando (git branch).
+Si queremos crear otra rama, usamos el comando (git branch <nombre>). Y para cambiar de rama, usamos el comando
+(git checkout <nombre>).
+
+Si queremos agregar todos los archivos de manera rápida usamos un punto. (git add .).
+
+--------------------------------------------------------------------------------------------------------------------------------
+GITHUB
+Para crear un nuevo repositorio nos vamos a la pestaña de repositorios y clickamos en new.
+El repositorio contiene todos los archivos de tu proyecto incluyendo la revisión de la historia.
+Con git subes todo tu proyecto y la historia de tu proyecto a un repositorio que vas a poder acceder posteriormente.
+
+Le introducimos un nombre. Y lo creamos.
+Una vez creado nos dan un sitio donde se ha de guardar, en este caso:
+https://github.com/asierbf80/git-course.git
+Por lo que nos vamos a la terminal y escribimos:
+  git remote add origin https://github.com/asierbf80/git-course.git
+  git push -u origin master
+
+Para que la gente que esté interesada en tu proyecto pueda lograr a entenderlo, se escribe un archivo README. Que lo que hace es
+que te permite explicar todo. Para escribir en el README se utiliza markdown.
+
+Como ya está en github, podemos eliminarlo de nuestro ordenador y posteriormente si queremos volver a hacer uso de este código,
+podemos clonarlo, descargandolo con un zip. O mediante este comando (git clone <link>)

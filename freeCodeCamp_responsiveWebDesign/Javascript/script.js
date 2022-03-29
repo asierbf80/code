@@ -206,6 +206,86 @@ if (num > 15) {
 } else {
   return "Between 5 and 15";
 }
+
 /* En el caso de que sean muchas opciones para elegir, lo mejor es usar una declaración switch.
-Las sentencias se ejecutan desde el valor case hasta que se encuentra un break.
+Las sentencias se ejecutan desde el valor case hasta que se encuentra un break. También se puede
+declarar default, que se ejecuta si no hay case. Debe ser el último caso. Si la sentencia break
+es omitida en algún caso, los siguientes casos se ejecutan hasta encontrar un break.
+*/
+switch (lowercaseLetter) {
+  case "a":
+    console.log("A");
+    break;
+  case "b":
+    console.log("B");
+    break;
+  default:
+    console.log("No hay letra");
+    break;
+}
+
+/* Es posible que hayas oído el término de objeto (object).
+Los objetos son similares a los arrays, excepto que en lugar de usar índices para acceder y
+modificar sus datos, accedes a los datos en los objetos a través de propiedades.
+Por ejemplo, un objeto de gato:
+*/
+const cat = {
+  "name": "Whiskers",
+  "legs": 4,
+  "tails": 1,
+  "enemies": ["Water","Dogs"]
+};
+// En este ejemplo, todas las propiedades son strings, pero también puedes usar números.
+/* Hay 2 maneras de acceder a las propiedades de un objeto. Mediante puntos (.) o mediante
+corchetes ([]).
+Cuando conoces el nombre de la propiedad con antelación, utilizas la notación de puntos.
+*/
+const myObj = {
+  prop1: "val1",
+  prop2: "val2"
+};
+
+const prop1val = myObj.prop1;
+const prop2val = myObj.prop2;
+
+/* Si la propiedad del objeto al que se intenta acceder tiene un espacio en el nombre, se
+ha de utilizar la conotación de corchetes ([]). Aunque nada te impide usarla tmb sin los
+espacios.
+*/
+var spaceName = myObj["Space Name"];
+/* Otro uso de la notación de corchetes es acceder a una propiedad que está almacenada
+como el valor de una variable. Ejemplo:
+*/
+const dogs = {
+    Fido: "Mutt",
+    Hunter: "Doberman",
+    Snoopie: "Beagle"
+};
+
+const myDog = "Hunter";
+const myBreed = dogs[myDog];
+console.log(myBreed);
+// El String Doberman se muestra por consola.
+
+/* Después de haber creado un objeto, puedes actualizar sus propiedades en cualquier momento.
+Mediante notación de puntos o de corchetes.
+*/
+const ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+};
+
+ourDog.name = "Happy Camper";
+ourDod.name
+// Si la propiedad no está escrita, podemos escribirla mediante puntos o corchetes.
+
+// También podemos eliminar propiedades tal como:
+delete myDog.friends;
+
+/*  Los objetos pueden ser considerados como un almacenamiento, es decir, como un diccionario.
+Si tienes datos tabulares, puedes utilizar un objeto para hacer una búsqueda de valores, en
+lugar de una declaración switch o una encadenación de if/elses. Esto es de utilidad cuando
+se sabe que los datos de entrada están limitados a un cierto rango.
 */

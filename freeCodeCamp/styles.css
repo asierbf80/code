@@ -1,0 +1,39 @@
+body{
+  background-color: darkcyan;
+
+}
+h1{
+  color: ghostwhite;
+  text-align: center;
+}
+div{
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  padding: 0px;
+}
+.uno{
+  background-color: coral;
+}
+.uno:hover{
+  transform: translateY(20px);
+}
+.dos{
+  background-color: steelblue;
+}
+.dos:hover{
+  transform: translateY(20px);
+}
+.tres{
+  background-color: aliceblue;
+}
+.tres:hover{
+  transform: translateY(20px);
+}
+#main{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  
+}
