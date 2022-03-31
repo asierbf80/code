@@ -1,3 +1,6 @@
+// JAVASCRIPT BÁSICO
+
+
 // Comentarios de una linea
 /* Comentarios de varias líneas */
 
@@ -292,7 +295,8 @@ se sabe que los datos de entrada están limitados a un cierto rango.
 
 /* A veces es útil comprobar si existe una propiedad o no y para ello existe el método
 .hasOwnProperty(propname) para determinar si un objeto tiene la propiedad con ese nombre o no.
-Devuelve un booleano si encuentra o no la propiedad. */
+Devuelve un booleano si encuentra o no la propiedad.
+*/
 const myObj = {
   top: "hat",
   bottom: "pants"
@@ -300,3 +304,73 @@ const myObj = {
 
 myObj.hasOwnProperty("top"); // true
 myObj.hasOwnProperty("middle"); // false
+
+/* Ejercicio: Modifica la función checkObj para verificar si el obj pasado a la función contiene
+la propiedad checkProp. Si la propiedad es encontrada, devuelve el valor de la propiedad. Si no,
+devuelve "Not Found"
+*/
+function checkObj(obj,checkProp) {
+  if(obj.hasOwnProperty(checkProp)){
+    return obj[checkProp];
+  }else{
+    return "Not Found";
+  }
+}
+// checkObj({gift:"pony", pet:"kitten", bed:"sleigh"},"gift");
+// Esto devuelve el string "pony".
+
+/* A veces, es posible que se necesite almacenar datos en una estructura de datos flexible. Un
+objeto de JS es una forma de manejar datos flexibles. Permiten combinaciones arbitrarias de
+cadenas, números, booleanos, arrays, funciones y objetos.
+Por ejemplo:
+*/
+const ourMusic = [
+  {
+    "artist": "Daft Punk",
+    "title": "Homework",
+    "release_year": 1997,
+    "formats":[
+      "CD",
+      "Cassette",
+      "LP"
+    ],
+    "gold": true
+  }
+];
+/* Esto es un arreglo que contiene un objeto en su interior. El objeto tiene varias piezas de
+metadatos sobre un álbum. Tambien tiene un arreglo anidado de formats. Si se quiere añadir
+más registros de álbumes, se puede hacer añadiendo registros a la parte superior del array.
+Los objetos almacenan datos en una propiedad, con formato clave-error. En este ejemplo,
+"artist": "Daft Punk" es una propiedad que tiene como clave artist y su valor es Daft Punk.
+JavaScript Object Notation (JSON) es un formato de intercambio de datos relacionado, utilizado
+para almacenar información.
+NOTA: Se debe colocar una coma después de cada objeto en el arreglo, a menos que sea el último.
+*/
+
+/* Se puede acceder a las sub propiedades de objetos encadenando la notación de puntos o corchetes.
+Por ejemplo:
+  ourMusic.formats.CD;
+*/
+const ourStorage = {
+  "desk":{
+    "drawer": "stapler"
+  },
+  "cabinet": {
+    "top drawer":{
+      "folder1": "a file",
+      "folder2": "secrets"
+    },
+    "bottom drawer": "soda"
+  }
+};
+
+ourStorage.cabinet["top drawer"].folder2;
+ourStorage.desk.drawer;
+
+/* Los objetos pueden contener tantos objetos anidados como así también arreglos anidados. De manera
+similar a como se accede a los objetos anidados, la notación de corchetes de arreglos puede ser
+encadenada para acceder a arreglos anidados.
+Del ejemplo expuesto en fCC:
+  ourPets[0].names[1]; // Sería el string Fluffy ya que está en el primer objeto y el segundo en names.
+  ourPets[1].names[0]; // Es el string Spot, al estar en el segundo objeto y segundo en names.
+*/
