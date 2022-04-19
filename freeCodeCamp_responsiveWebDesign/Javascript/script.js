@@ -374,3 +374,327 @@ Del ejemplo expuesto en fCC:
   ourPets[0].names[1]; // Sería el string Fluffy ya que está en el primer objeto y el segundo en names.
   ourPets[1].names[0]; // Es el string Spot, al estar en el segundo objeto y segundo en names.
 */
+
+/*
+Se te da un objeto que representa una parte de tu colección de álbumes musicales. Cada álbum tiene un
+número id único como clave y otras propiedades. Empiezas con una función updateRecords la cual toma un
+objeto (records) que contiene el álbum musical de la colección, un id, prop (como artist o tracks) y un
+valor value.
+Completa la función usando las siguientes reglas:
+  - La función debe devolver siempre el objeto de colección de registros completo.
+  - Si prop no es "tracks" y value no es una cadena vacía, actualiza o establece la propiedad prop del
+  album a value.
+  - Si prop es "tracks" pero el album no tiene una propiedad "tracks", crea un array vacío y agrégale
+  value a él.
+  - Si prop es "tracks" y value no es una cadena vacía, agrega value al final del array de tracks.
+  - Si value es una cadena vacía, elimina esa propiedad prop del álbum.
+*/
+
+// Configuración
+const recordCollection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+
+// Cambia solo el código debajo de esta línea
+function updateRecords(records, id, prop, value) {
+  if(prop != 'tracks' && value != ""){
+    records[id][prop] = value;
+  }else if(prop === 'tracks' && records[id].hasOwnProperty('tracks') == false){
+    records[id][prop] = [value];
+  }else if(prop === 'tracks' && value != ""){
+    records[id][prop].push(value);
+  }else if(value === ""){
+    delete records[id][prop];
+  }
+  return records;
+}
+
+updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+
+/*
+- updateRecords(recordCollection, 5439, "artist", "ABBA"), artist debe ser la cadena ABBA.
+- updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me"), tracks debe tener la cadena
+ Take a Chance on Me como último elemento.
+- updateRecords(recordCollection, 2548, "artist", ""), artist no se debe establecido.
+- updateRecords(recordCollection, 1245, "tracks", "Addicted to Love"), tracks debe tener la cadena
+ Addicted to Love como último elemento.
+- updateRecords(recordCollection, 2468, "tracks", "Free"), tracks debe tener la cadena
+ 1999 como el primer elemento.
+- updateRecords(recordCollection, 2548, "tracks", ""), tracks no se debe establecido.
+- updateRecords(recordCollection, 1245, "albumTitle", "Riptide"), albumTitle debe ser
+la cadena Riptide.
+*/
+
+/*
+    BUCLES
+Podemos ejecutar el mismo código múltiples veces usando un bucle.
+El primer tipo de bucle que aprenderemos se llama bucle while (ejecuta una condición específica mientras
+que esta sea verdadera y deteniendose cuando deja de serlo.)
+*/
+const ourArray = [];
+let i = 0;
+
+while(i < 5){
+  ourArray.push(i);
+  i++;
+}
+// En este ejemplo, el bucle se ejecuta 5 veces y añade los números del 0 al 4 en ourArray
+
+/*
+Como hemos visto antes, se puede ejecutar el mismo código múltiples veces usando un bucle. El bucle más
+común de JS es el bucle for (que se ejecuta por un número espífico de veces).
+
+for(a; b; c) a es la sentencia de inicialización. b es la sentencia condicional. c es la expresión final.
+La sentencia de inicialización se ejecuta 1 sola vez antes de que comience el bucle.
+La sentencia condicional es evaluada al principio de cada iteración del bucle y continuará siempre y cuando sea true. Cuando sea False
+dejará de ejecutarse.
+La expresión final se ejecuta al final de cada iteración del bucle, antes de la siguiente comprobación de condición y se utiliza
+normalmente para incrementar o disminuir tu contador del bucle.
+*/
+const ourArray = [];
+
+for (let i = 0; i < 5; i++) {
+  ourArray.push(i);
+}
+// El valor de ourArray tiene el valor [0,1,2,3,4]
+
+
+// Los bucles for no tienen porqué iterar de uno en uno a la vez. Al cambiar la expresión final, podemos contar con números pares o impares.
+for(let i = 0; i < 10; i += 2){
+  ourArray.push(i);
+}
+// El array ahora contiene [0,2,4,6,8]
+
+/* También se puede contar hacia atrás, definiendo las condiciones adecuadas.
+  (i > 0; i -= 2)
+*/
+
+/*
+Algo común en JS es iterar a través del contenido de un arreglo. Una manera de hacerlo es con el bucle for. Este código muestra cada elemento
+del array arr en la consola.
+Recordar que los array tienen una indexación basada en cero, lo que significa que el último índice del array es igual a su longitud - 1
+(length - 1). El siguiente bucle se detiene cuando i es igual a length. En este caso, la última iteración es i === 4, es decir, cuando i se
+convierte en igual a arr.length - 1 y resultados 6 a la consola. Entonces i aumenta a 5 y el bucle termina i < arr.length es false.
+*/
+const arr = [10,9,8,7,6];
+
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
+}
+
+/*
+Si tienes un array multidimensional, puedes utilizar la misma lógica que aprendimos anteriormente para recorrer tanto el array como cualquier
+sub-array.
+El ejemplo siguiente imprime cada sub-elemento dentro de arr uno a la vez.
+Para el bucle interior comprobamos el .length de arr[i], ya que arr[i] es en sí mismo un array.
+*/
+const arr = [
+  [1,2],[3,4],[5,6]
+];
+
+for(let i = 0; i < arr.length; i++){
+  for(let j = 0; j < arr[i].length; j++){
+    console.log(arr[i][j]);
+  }
+}
+
+/*
+El siguiente bucle es do...while. Primero hace una pasada por el código sin importar el bucle y luego lo continua ejecutando mientras la
+condición sea true.
+*/
+const ourArray = [];
+let i = 0;
+
+do {
+  ourArray.push(i);
+  i++;
+} while (i < 5);
+
+/*
+La recursión es el concepto de que una función puede expresarse en términos de sí misma. Para ayudar a comprender esto, comenzamos pensando
+en la siguiente tarea:
+multiplica los primeros n elementos de un array para crear el producto de esos elementos. Usando un bucle for podemos hacer:
+  function multiply(arr, n) {
+    let product = 1;
+    for (let i = 0; i < n; i++) {
+      product *= arr[i];
+    }
+    return product;
+  }
+
+Sin embargo, podemos observar que: multiply(arr,n) == multiply(arr,n-1) * arr[n-1].
+Por lo que podemos reescribir el código de manera que nunca necesitemos hacer uso del bucle reescribiendo la función multiply en términos
+de sí misma.
+*/
+function multiply(arr, n) {
+    if (n <= 0) {
+      return 1;
+    } else {
+      return multiply(arr, n - 1) * arr[n - 1];
+    }
+  }
+
+/*
+La versión recursiva de multiply se desglosa tal que:
+  ·En el caso base, donde n sea menor o igual a 0 (n <= 0), devuelva 1 (return 1)
+  ·Para valores más grandes que n, llama a multiply pero con un valor de n - 1. Llamando de nuevo a la función hasta que n <= 0.
+Las funciones recursivas deben tener un caso base cuando devuelven sin tener que llamar a la función de nuevo (en este caso n <= 0), de lo
+contrario nunca podrán terminar de ejecutarse.
+ */
+
+/*
+Tenemos un array de objetos que representan a diferentes personas listadas. Una función lookUpProfile que recibe un nombre y propiedad como
+argumentos, debe verificar si el nombre es el firstName y la propiedad es una propiedad de ese contacto. Si ambos son verdaderos, devuelve
+el valor de esa propiedad. Si alguno no corresponde: No such "".
+*/
+const contacts = [
+  {
+    firstName: "Akira",
+    lastName: "Laine",
+    number: "0543236543",
+    likes: ["Pizza", "Coding", "Brownie Points"],
+  },
+  {
+    firstName: "Harry",
+    lastName: "Potter",
+    number: "0994372684",
+    likes: ["Hogwarts", "Magic", "Hagrid"],
+  },
+  {
+    firstName: "Sherlock",
+    lastName: "Holmes",
+    number: "0487345643",
+    likes: ["Intriguing Cases", "Violin"],
+  },
+  {
+    firstName: "Kristian",
+    lastName: "Vos",
+    number: "unknown",
+    likes: ["JavaScript", "Gaming", "Foxes"],
+  },
+];
+
+function lookUpProfile(name, prop) {
+  for (let i = 0; i < contacts.length; i++){
+    if(contacts[i].firstName === name){
+      if(contacts[i].hasOwnProperty(prop)){
+        return contacts[i][prop];
+      }
+      return "No such property";
+    }
+
+  }
+  return "No such contact";
+}
+
+/*
+Los números aleatorios son útiles para crear comportamientos aleatorios.
+JS tiene una función Math.random() que genera un número decimal entre 0 y 1(exclusivo).
+La función puede devolver un 0 pero nunca un 1.
+Es mejor si usamos mejor números enteros en vez de números decimales.
+  · Generamos un decimal con Math.random()
+  · Multiplicamos por 20 ese valor
+  · Utilizamos la función Math.floor() para redondear el número hacia abajo a su número entero más cercano.
+  Por ello, el número está entre 0 y 19.
+
+Podemos generar un número entero aleatorio en vez de entre 0 y un número cualquiera, entre un valor min y max.
+Tal que:
+  Math.floor(Math.random() * (max - min + 1)) + min
+
+Otra función en JS es parseInt().
+Analiza la cadena y devulve un entero. Si el primer carácter del string no se puede convertir a número, entonces es NaN.
+  const a = parseInt("007");
+
+La función parseInt analiza una cadena y devuelve un entero. Al recibir un segundo argumento, especifica en la base en la que se encuentra el
+número (decimal, binario, etc). Valor entre [2,36]
+*/
+
+/*
+El operador condicional o ternario, puede utilizarse como una expresión if-else de una sola línea.
+La sintáxis es
+  a ? b : c [a(condicion),b(código true),c(código false)]
+*/
+function findGreater(a, b) {
+  if(a > b) {
+    return "a is greater";
+  }
+  else {
+    return "b is greater or equal";
+  }
+}
+// Sería entonces:
+function findGreater(a, b) {
+  return a > b ? "a is greater" : "b is greater or equal";
+}
+
+/*
+Se pueden utilizar múltiples operadores condicionales:
+function findGreaterOrEqual(a, b) {
+  return (a === b) ? "a and b are equal"
+    : (a > b) ? "a is greater"
+    : "b is greater";
+}
+*/
+
+
+// Utilizando la recursión:
+function countup(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const countArray = countup(n - 1);
+    countArray.push(n);
+    return countArray;
+  }
+}
+console.log(countup(5));
+// El valor [1,2,3,4,5] se mostrará en consola.
+
+function countdown(n){
+  if(n < 1){
+    return [];
+  }else{
+    const arr = countdown(n - 1);
+    arr.unshift(n);
+    return arr;
+  }
+}
+console.log(countdown(3));
+/* El valor [3,2,1] se mostrará por consola.
+   Tambíen vale
+function countdown(n){
+   return n < 1 ? [] : [n].concat(countdown(n - 1));
+}
+*/
+
+/*
+Hemos definido una función llamada rangeOfNumbers con dos parámetros. La función debe devolver un arreglo de enteros que comienza con
+el número representado por el parámetro startNum y termina con el número representado por el parámetro endNum. El número inicial será
+siempre menor o igual que el número final. Tu función debe utilizar recursión, llamándose a sí misma, y no utilizar bucles de ningún tipo.
+También debe funcionar en el caso que startNum y endNum sean iguales.
+*/
+function rangeOfNumbers(startNum, endNum) {
+  if(endNum - startNum === 0){
+    return [startNum];
+  }else{
+    let arr = rangeOfNumbers(startNum, endNum - 1);
+    arr.push(endNum);
+    return arr;
+  }
+};
