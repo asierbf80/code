@@ -1,0 +1,6 @@
+i = int(input("Introduce los detalles de tu test care. Dime un número: "))
+in1 = float(input("Dime otro número: "))
+in2 = float(input("Dime un número más: "))
+output = input("Ahora elige true o false: ")
+result = input("Y, pass o fail: ")
+print("La representación es:TEST_ID_{0:05d} --- inputs: {1:.2e}, {2:.2e} --- output: {3:s} --- result: {4:s}".format(i, in1, in2, output, result))

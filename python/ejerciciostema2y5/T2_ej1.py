@@ -1,0 +1,5 @@
+verb = str(input("Dime un gerundio: "))
+pluralnoun = str(input("Dime un sustantivo: "))
+noun = str(input("Dime otro sustantivo: "))
+adjective = str(input("Dime un adjetivo: "))
+print("Ayer", verb, "vi a mi", pluralnoun, "me quedé", adjective, "porque debería de haber estado en", noun)

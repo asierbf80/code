@@ -1,0 +1,7 @@
+a= int(input("Dime un número: "))
+b= int(input("Dime otro número: "))
+print("Su suma es:", a + b)
+print("Su resta es: ", a - b)
+print("Su producto es: ", a * b)
+print("Su cociente es: ", a / b)
+print("Su resto es: ", a % b)

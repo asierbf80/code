@@ -91,6 +91,7 @@ Si queremos crear otra rama, usamos el comando (git branch <nombre>). Y para cam
 
 Si queremos agregar todos los archivos de manera rápida usamos un punto. (git add .).
 
+
 --------------------------------------------------------------------------------------------------------------------------------
 GITHUB
 Para crear un nuevo repositorio nos vamos a la pestaña de repositorios y clickamos en new.

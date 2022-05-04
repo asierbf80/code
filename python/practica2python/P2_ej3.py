@@ -1,0 +1,5 @@
+c=float(input("¿Cuál es la cantidad de capital? "))
+r=float(input("¿En qué porcentaje? "))
+t=float(input("¿Durante cuántos dias? "))
+interes = c*(r/100)*(t/360)
+print("El interes generado es ", interes)
